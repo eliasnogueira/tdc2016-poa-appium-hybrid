@@ -1,0 +1,22 @@
+<ion-view view-title="Product Categories">
+  <ion-nav-buttons side="secondary">
+    <a href="#/categoryCreate" class="button button-icon ion-plus-circled"></a>
+    <a href="#/profile" class="button button-icon ion-gear-b"></a>
+  </ion-nav-buttons>
+  <ion-content class="padding has-header">
+
+    <h4 class="text-center" ng-show="categoryList.length <= 0">
+      Create your first category here! <a href="#/categoryCreate" class="icon ion-plus-circled big-icon positive"></a>
+    </h4>
+
+    <ion-item class="card" ng-repeat="category in categoryList" href="#/categoryDetail/{{category.$id}}">
+      <div class="item item-divider center-text">
+        {{category.name}}
+      </div>
+      <div class="item item-text-wrap">
+        {{category.description}}
+      </div>
+    </ion-item>
+
+  </ion-content>
+</ion-view>

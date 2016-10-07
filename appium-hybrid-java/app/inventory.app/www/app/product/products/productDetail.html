@@ -1,0 +1,41 @@
+<ion-view>
+  <ion-nav-title>{{currentProduct.name}}</ion-nav-title>
+  <ion-nav-buttons side="secondary">
+    <button class="button button-icon ion-trash-b" ng-click="productDelete(currentProduct.$id)"></button>
+    <a href="#/productUpdate/{{currentProduct.$id}}" class="button button-icon ion-edit"></a>
+  </ion-nav-buttons>
+  <ion-content class="padding has-header">
+
+    <div class="card">
+      <div class="item item-text-wrap" id="description">
+        {{currentProduct.description}}.
+      </div>
+      <div class="item item-divider">
+        <p>
+          Price: <strong id="price">{{currentProduct.price | currency}}</strong>
+        </p>
+
+        <p>
+          There are <strong id="units">{{currentProduct.units}}</strong> available right now.
+        </p>
+      </div>
+    </div>
+
+
+
+    <h4 class="center-text no-padding margin-top-super">
+      Share this product!
+    </h4>
+
+    <div class="button-bar">
+      <button class="button button-icon icon ion-social-whatsapp balanced"
+        ng-click="shareWhatsapp(message, image, link)">
+      </button>
+      <button class="button button-icon icon ion-email assertive"
+        ng-click="shareEmail(message, subject, toArr, ccArr, bccArr, file)">
+      </button>
+    </div>
+
+
+  </ion-content>
+</ion-view>
